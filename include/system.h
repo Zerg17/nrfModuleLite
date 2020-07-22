@@ -10,4 +10,3 @@
 #define BOAD 500000
 
 void sysInit();
-uint8_t nrfR(uint8_t reg);
