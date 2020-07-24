@@ -1,3 +1,6 @@
+#pragma once
+#ifndef NRF_DEFINE
+#define NRF_DEFINE
 
 #define CONFIG      0x00
 #define EN_AA       0x01
@@ -94,3 +97,6 @@
 #define RF_DR_HIGH  3
 #define RF_PWR_LOW  1
 #define RF_PWR_HIGH 2
+
+
+#endif
