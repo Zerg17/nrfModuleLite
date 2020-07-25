@@ -9,8 +9,10 @@ int main(void){
     data[0]=0;
     while(1){
 #ifdef RX_MODULE
-        while(nrfStatus()&RX_DR);
-        nrfRD(data)
+        setCE;
+        while(!(nrfStatus()&RX_DR));
+        resCE;
+        nrfRD(data);
         xprintf("%3d\n",data[0]);
 #endif
 
@@ -19,6 +21,7 @@ int main(void){
         data[0]++;
         _delay_us(1000000);
 #endif
+
 #ifdef SSD1306_MODULE
         ssd1306_Fill(0);
         ssd1306_SetCursor(0, 0);
