@@ -4,13 +4,14 @@
 
 #include "nrfDefine.h"
 #include "system.h"
+#include "SPI.h"
 
 #define nrfCH(a) nrfW(RF_CH,(a))
 
-#define resCE  GPIOA->BSRR = GPIO_BSRR_BR_1
-#define resCSN GPIOA->BSRR = GPIO_BSRR_BR_0
-#define setCE  GPIOA->BSRR = GPIO_BSRR_BS_1
-#define setCSN GPIOA->BSRR = GPIO_BSRR_BS_0
+#define resCE  GPIOA->BSRR = GPIO_BSRR_BR_0
+#define resCSN GPIOA->BSRR = GPIO_BSRR_BR_1
+#define setCE  GPIOA->BSRR = GPIO_BSRR_BS_0
+#define setCSN GPIOA->BSRR = GPIO_BSRR_BS_1
 
 #define nrfST nrfW(CONFIG, 0b1110)
 #define nrfSR nrfW(CONFIG, 0b1111)
@@ -27,5 +28,5 @@
 #include "nrfDefine.h"
 
 uint8_t nrfR(uint8_t reg); //Чтение регистра из nrf
-
+uint8_t nrfStatus();
 #endif
