@@ -61,5 +61,4 @@ void sysInit(){
     ssd1306_Init(0x3C);
     #endif
     SysTick_Config(F_CPU/100);
-    nrfConfig();
 }
