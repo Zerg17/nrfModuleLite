@@ -4,10 +4,7 @@
 
 #include "stm32f0xx.h"
 
-//Инициализация SPI
-void spiInit(void);
-
-//Прием и передача данных в SPI
-uint8_t spiWR(uint8_t data);
+void spiInit(void);             //Инициализация SPI
+uint8_t spiWR(uint8_t data);    //Прием и передача данных в SPI
 
 #endif

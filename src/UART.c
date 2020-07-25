@@ -1,4 +1,4 @@
-#include "UART.h"
+#include "uart.h"
 
 void uartWrite(uint8_t d){                 //Инициализация UART
     while(!(USART1->ISR & USART_ISR_TXE)); //ждем, пока буффер не освободится
