@@ -22,7 +22,6 @@ int main(void){
         nrfRD(data);
         xprintf("%3d\n",data[0]);
 #endif    
-<<<<<<< HEAD
         // xprintf("CONFIG      = %08b\n",nrfR(CONFIG));//         0x00
         // xprintf("EN_RXADDR   = %08b\n",nrfR(EN_RXADDR));//      0x02
         // xprintf("SETUP_AW    = %08b\n",nrfR(SETUP_AW));//       0x03
@@ -52,13 +51,7 @@ int main(void){
         // _delay_cs(100);
 #ifdef TX_MODULE
         nrfSD(data);
-        data[0]++;
-=======
-
-#ifdef TX_MODULE
-        nrfSD(data);
         xsprintf(data, "%u Hello, World!\n", sec);
->>>>>>> dc42ee8bb96a4202e8938eb870115d4053e46e44
         _delay_cs(100);
 #endif
 
