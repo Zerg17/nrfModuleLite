@@ -16,9 +16,13 @@ void gpioInit(){
 
     //Инициализация GPIO для UART
     GPIOA->MODER |= GPIO_MODER_MODER3_1 | GPIO_MODER_MODER2_1; 
-    GPIOA->AFR[0]|= 0x00001100;
+                                        //Выставляем GPIO в альтернативный режим
+    GPIOA->AFR[0]|= 0x00001100;         //Выбираем альтернативный режим UART
     //Инициализация GPIO для SPI  
-    GPIOA->MODER |= GPIO_MODER_MODER0_0 | GPIO_MODER_MODER1_0 |GPIO_MODER_MODER5_1 | GPIO_MODER_MODER6_1 | GPIO_MODER_MODER7_1;
+    GPIOA->MODER |= GPIO_MODER_MODER0_0 | GPIO_MODER_MODER1_0
+                                          //Output для CE и CSN
+                 |GPIO_MODER_MODER5_1 | GPIO_MODER_MODER6_1 
+                 | GPIO_MODER_MODER7_1;   //Альтернативный режим для SPI
     
     #ifdef I2C_MODULE
     //Инициализация GPIO для I2C
