@@ -6,7 +6,7 @@ int main(void){
     sysInit();
     xprintf("initialization...\n");
     uint8_t data[32];
-    data[0]=0;
+    
     while(1){
 #ifdef RX_MODULE
         setCE;
@@ -18,7 +18,7 @@ int main(void){
 
 #ifdef TX_MODULE
         nrfSD(data);
-        data[0]++;
+        xsprintf(data, "%u Hello, World!\n", sec);
         _delay_us(1000000);
 #endif
 
