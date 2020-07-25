@@ -10,13 +10,14 @@ int main(void){
         while(nrfStatus()&RX_DR);
         nrfRD(data)
         xprintf("%3d\n",data[0]);
-#elif  TX_MODULE
+#endif
+
+#ifdef TX_MODULE
         nrfSD(data);
         data[0]++;
         _delay_us(1000000);
-#else
+#endif
         xprintf("%02X\n",nrfStatus());
         _delay_us(1000000);
-#endif
     }
 }
