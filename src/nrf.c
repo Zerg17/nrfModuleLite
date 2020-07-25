@@ -1,11 +1,5 @@
 #include "nrf.h"
 
-void nrfConfig(){
-    nrfW(CONFIG, EN_CRC | CRCO | PWR_UP); //powerUp=1, CRC = 2 байта, Включить CRC
-    _delay_cs(1);
-    nrfW(RF_SETUP, 0b100110); //0 дБл мощность, 250 кбит/с скорость
-}
-
 uint8_t nrfR(uint8_t reg) {                               //Считать значение произвольного регистра NRF                  
     resCSN;                                               //Активируем SPI slave
     spiWR(R_REGISTER | (REGISTER_MASK & reg));            //Передаем команду на чтение регистра
@@ -66,4 +60,10 @@ void nrfSAD(uint32_t value, uint8_t nPipe) {              //Смена адре�
     spiWR(value >> 24);                                   //   --//--
     spiWR(0);                                             //   --//--
     setCSN;                                               //Отключаем SPI slave
+}
+
+void nrfConfig(){
+    nrfW(CONFIG, EN_CRC | CRCO | PWR_UP); //powerUp=1, CRC = 2 байта, Включить CRC
+    _delay_cs(1);
+    nrfW(RF_SETUP, 0b100110); //0 дБл мощность, 250 кбит/с скорость
 }

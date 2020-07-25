@@ -14,12 +14,12 @@ int main(void){
         resCE;
         nrfRD(data);
         xprintf("%3d\n",data[0]);
-#endif
+#endif    
 
 #ifdef TX_MODULE
         nrfSD(data);
         xsprintf(data, "%u Hello, World!\n", sec);
-        _delay_us(1000000);
+        _delay_сs(100);
 #endif
 
 #ifdef SSD1306_MODULE
@@ -28,5 +28,6 @@ int main(void){
         xfprintf(ssd1306_Char, "%d", tick);
         ssd1306_UpdateScreen();
 #endif
+        
     }
 }
