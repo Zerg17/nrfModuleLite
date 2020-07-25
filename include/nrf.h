@@ -4,7 +4,7 @@
 
 #include "nrfDefine.h"
 #include "system.h"
-#include "SPI.h"
+#include "spi.h"
 
 #define nrfCH(a) nrfW(RF_CH,(a))
 
