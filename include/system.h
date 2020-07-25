@@ -10,8 +10,8 @@
 
 #define _delay_us(a) for(volatile uint32_t i=0;i<a*8/6;i++)
 
-extern uint32_t volatile tick=0;
-extern uint32_t sec_d=0;
-extern uint32_t volatile sec=0;
+extern uint32_t volatile tick;
+extern uint32_t sec_d;
+extern uint32_t volatile sec;
 
 void sysInit();
