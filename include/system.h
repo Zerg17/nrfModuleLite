@@ -2,13 +2,12 @@
 
 #include "stm32f0xx.h"
 #include "config.h"
-
+#include "nrf.h"
 #include "xprintf.h"
-#include "nrfDefine.h"
 #ifdef SSD1306_MODULE
 #include "ssd1306.h"
 #endif
 
-#define BOAD 500000
+#define _delay_us(a) for(volatile uint32_t i=0;i<a*8/6;i++)
 
 void sysInit();
