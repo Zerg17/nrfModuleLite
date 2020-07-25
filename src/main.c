@@ -1,5 +1,7 @@
 #include "system.h"
 
+uint32_t tim1 = 100;
+
 int main(void){
     sysInit();
     xprintf("initialization...\n");
@@ -17,7 +19,13 @@ int main(void){
         data[0]++;
         _delay_us(1000000);
 #endif
-        xprintf("%02X\n",nrfStatus());
-        _delay_us(1000000);
+#ifdef SSD1306_MODULE
+        ssd1306_Fill(0);
+        ssd1306_SetCursor(0, 0);
+        xfprintf(ssd1306_Char, "%d", tick);
+        ssd1306_UpdateScreen();
+#endif
+        while(tick<tim1);
+        tim1+=100;
     }
 }
