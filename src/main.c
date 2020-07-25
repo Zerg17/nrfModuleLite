@@ -19,7 +19,7 @@ int main(void){
 #ifdef TX_MODULE
         nrfSD(data);
         xsprintf(data, "%u Hello, World!\n", sec);
-        _delay_сs(100);
+        _delay_cs(100);
 #endif
 
 #ifdef SSD1306_MODULE
