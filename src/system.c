@@ -54,7 +54,6 @@ void sysInit(){
     gpioInit();
     uartInit();
     spiInit();
-    nrfConfig();
     #ifdef I2C_MODULE
     i2cInit();
     #endif
@@ -62,4 +61,5 @@ void sysInit(){
     ssd1306_Init(0x3C);
     #endif
     SysTick_Config(F_CPU/100);
+    nrfConfig();
 }
