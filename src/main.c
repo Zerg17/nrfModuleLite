@@ -28,7 +28,5 @@ int main(void){
         xfprintf(ssd1306_Char, "%d", tick);
         ssd1306_UpdateScreen();
 #endif
-        xprintf("Hello Sanya!  %d (%u)\n",tick,(uint8_t)(tick-255U));
-        sanyaDelay(100);
     }
 }

@@ -54,6 +54,7 @@ void sysInit(){
     gpioInit();
     uartInit();
     spiInit();
+    nrfConfig();
     #ifdef I2C_MODULE
     i2cInit();
     #endif

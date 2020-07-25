@@ -2,7 +2,7 @@
 
 void nrfConfig(){
     nrfW(CONFIG, EN_CRC | CRCO | PWR_UP); //powerUp=1, CRC = 2 байта, Включить CRC
-    _delay_us(1000000);
+    _delay_cs(1);
     nrfW(RF_SETUP, 0b100110); //0 дБл мощность, 250 кбит/с скорость
 }
 
