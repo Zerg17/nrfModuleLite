@@ -29,4 +29,7 @@
 
 uint8_t nrfR(uint8_t reg); //Чтение регистра из nrf
 uint8_t nrfStatus();
+void nrfSD(uint8_t* send);
+void nrfRD(uint8_t* buf); 
+
 #endif
