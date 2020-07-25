@@ -8,7 +8,7 @@
 #include "ssd1306.h"
 #endif
 
-#define _delay_us(a) for(volatile uint32_t i=0;i<a*8/6;i++)
+#define _delay_us(a) for(volatile uint32_t i=0;i<a*8/12;i++)
 
 extern uint32_t volatile tick;
 extern uint32_t sec_d;
