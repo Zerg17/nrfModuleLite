@@ -5,9 +5,9 @@ uint32_t tim1 = 100;
 int main(void){
     sysInit();
     xprintf("initialization...\n");
-  
+    _delay_cs(20)
     nrfConfig();
-    uint8_t data[32];
+    uint8_t *data;
     
     while(1){
 #ifdef RX_MODULE
@@ -20,12 +20,13 @@ int main(void){
         xprintf("\n");
         resCE;
         nrfRD(data);
-        xprintf("%3d\n",data[0]);
+        xprintf("%S\n",(char *)data);
 #endif    
 
 #ifdef TX_MODULE
         nrfSD(data);
         xsprintf(data, "%u Hello, World!\n", sec);
+        nrfPrintReg();
         _delay_cs(100);
 #endif
 

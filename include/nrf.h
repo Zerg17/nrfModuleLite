@@ -32,5 +32,5 @@ uint8_t nrfStatus();
 void nrfSD(uint8_t* send);
 void nrfRD(uint8_t* buf); 
 void nrfConfig();
-void printAllReg();
+void nrfPrintReg();
 #endif

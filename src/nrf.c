@@ -68,7 +68,7 @@ void nrfConfig(){
     nrfW(RF_SETUP, 0b100110);                             //0 дБ мощность, 250 кбит/с скорость
 }
 
-void printAllReg(){                                       //Считывание и вывод в uart всех регистров nrf
+void nrfPrintReg(){                                           //Считывание и вывод в uart всех регистров nrf
     xprintf("CONFIG      = %08b\n",nrfR(CONFIG));         //0x00
     xprintf("EN_AA       = %08b\n",nrfR(EN_AA));          //0x01
     xprintf("EN_RXADDR   = %08b\n",nrfR(EN_RXADDR));      //0x02
@@ -95,4 +95,5 @@ void printAllReg(){                                       //Считывание
     xprintf("FIFO_STATUS = %08b\n",nrfR(FIFO_STATUS));    //0x17
     xprintf("DYNPD       = %08b\n",nrfR(DYNPD));	      //0x1C
     xprintf("FEATURE     = %08b\n",nrfR(FEATURE));	      //0x1D
+    xprintf("\n");
 }
